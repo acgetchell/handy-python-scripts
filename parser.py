@@ -16,7 +16,7 @@ txt.close()
 for i in lines:
 	print i
 
-print "Here's your line-by-line counts: "
+print "Here's your position-in-line counts: "
 transposed = map(None, *lines)
 line_number = 1
 for i in transposed:
