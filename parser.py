@@ -1,8 +1,9 @@
 """This script parses simple text data files with arrays of characters
 such as nucleotide sequences"""
 
-from __future__ import division
 # This allows auto-conversion integer to floating point division
+from __future__ import division
+
 from sys import argv
 
 script, filename = argv
