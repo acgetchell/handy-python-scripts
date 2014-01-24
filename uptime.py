@@ -1,7 +1,12 @@
 """This script converts minutes to the appropriate weeks, days, hours,
-and minutes and also calculates yearly uptime."""
+and minutes and also calculates yearly uptime.
+
+It uses the BigFloat package http://pythonhosted.org/bigfloat/ and
+can be installed using 'sudo pip install bigfloat'
+"""
 
 from sys import argv
+from bigfloat import div
 
 MINUTES_PER_YEAR = 525949
 MINUTES_PER_WEEK = 10080
@@ -36,6 +41,8 @@ else:
     hours = 0
 
 print "%i weeks %i days %i hours %i minutes" % (weeks, days, hours, minutes)
-print "If you entered total downtime per year in minutes, that's an uptime of \
-    %i%%" % ((float(MINUTES_PER_YEAR - original_minutes)
-            /float(MINUTES_PER_YEAR)*100))
+
+uptime = div((MINUTES_PER_YEAR - original_minutes), (MINUTES_PER_YEAR))*100
+
+print "If you entered total downtime per year in minutes, that's an uptime of "
+print uptime
